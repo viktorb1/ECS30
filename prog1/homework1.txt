@@ -1,0 +1,6 @@
+1. Variables cannot start with numbers, be keywords, have an apostrophe, space or number sign. Therefore, the only valid variable names are:
+	income, c3po, item
+2. Macros should be uppercase.
+	G, MAX_SPEED
+3. See program.
+4. int, float, double, char, void
