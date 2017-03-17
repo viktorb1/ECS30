@@ -19,6 +19,6 @@ int main() {
 
 	sum += ' ';
 
-	printf("Checksum: %c", sum);
+	printf("Checksum: %c", (char)sum);
 	return EXIT_SUCCESS;
 }
