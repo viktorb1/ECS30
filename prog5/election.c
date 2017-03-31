@@ -26,17 +26,18 @@ void read_file(int electionData[6][5], int argc, char** argv) {
 
 	FILE* fp = fopen(argv[1], "r");
 
-	for (int i = 0; i < 5; i++) {
-		for (int j = 0; j < 5; j++) {
+	int i,j;
+	for (i = 0; i < 5; i++) {
+		for (j = 0; j < 5; j++) {
 			fscanf(fp, "%d", &electionData[i][j]);
 		}
 	}
 
-	for (int j = 0; j < 5; j++) {
+	for (j = 0; j < 5; j++) {
 
 		electionData[5][j] = 0;
 
-		for (int i = 0; i < 5; i++) {
+		for (i = 0; i < 5; i++) {
 
 			electionData[5][j] += electionData[i][j];
 		}
@@ -47,11 +48,12 @@ void sort(int electionData[6][5], char candidateabcd[4]) {
 	int temp[6][5];
 	char tempabcd;
 
-	for (int i = 0; i < 3; i++) {
-		for (int j = 1; j < 4-i; j++) {
+	int i, j, k;
+	for (i = 0; i < 3; i++) {
+		for (j = 1; j < 4-i; j++) {
 			if (electionData[5][j+1] > electionData[5][j]) {
 			
-				for(int k = 0; k < 6; k++) {
+				for(k = 0; k < 6; k++) {
 					temp[k][j] = electionData[k][j];
 					electionData[k][j] = electionData[k][j+1];
 					electionData[k][j+1] = temp[k][j];
@@ -70,8 +72,9 @@ void show_table(int electionData[6][5], char candidateabcd[4]) {
 	printf("           Candidate  Candidate  Candidate  Candidate\n");
 	printf("Precinct       %c          %c          %c          %c    \n", candidateabcd[0], candidateabcd[1], candidateabcd[2], candidateabcd[3]);
 
-	for (int i = 0; i < 5; i++) {
-		for (int j = 0; j < 5; j++) {
+	int i, j;
+	for (i = 0; i < 5; i++) {
+		for (j = 0; j < 5; j++) {
 			printf("  %4d     ", electionData[i][j]);
 		}
 		printf("\n");
