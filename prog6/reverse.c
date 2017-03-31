@@ -22,6 +22,7 @@ int main() {
 	int num_words = reverse_words(input, output);
 	printf("Reversed: ");
 	print_words(output, num_words);
+	free(output);
 	return 0;
 }
 

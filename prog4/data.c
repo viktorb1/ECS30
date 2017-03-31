@@ -47,6 +47,7 @@ int main(int argc, char** argv) {
 	printf("Average:  %6.2lf\n", ave);
 	printf("Standard deviation: %6.3lf\n", sd);
 
+	free(data);
 	fclose(fp);
 	return 0;
 }

@@ -12,6 +12,8 @@ int main() {
 	char* second_word = read_word_to_str();
 	char* suffix = get_longest_suffix(first_word, second_word);
 	printf("Longest common suffix: %s", suffix);
+	free(first_word);
+	free(second_word);
 	return 0;
 }
 
